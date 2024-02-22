@@ -1,3 +1,4 @@
+import javax.print.attribute.standard.NumberOfDocuments;
 import java.util.Scanner;
 
 public class CountFactors {
@@ -6,13 +7,16 @@ public class CountFactors {
 
         System.out.println("Enter Number to check Factors");
         int a = in.nextInt();
+
         int count=0;
         for(int i=1;i<=a;i++){
             if(a%i==0){
                 count++;
 
+
             }
             else{
+
                 continue;
             }
 
