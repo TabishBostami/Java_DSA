@@ -1,6 +1,6 @@
 public class checkprime {
     public static void main(String[] args) {
-        int a=6;
+        int a=11;
 
 
 
