@@ -1,57 +1,47 @@
 public class ObjectMethodsDemo {
-    public static void main(String[] args) throws CloneNotSupportedException, InterruptedException {
-        // toString() method
+    public static void main(String[] args) {
+        // Creating two objects for demonstration
         Object obj1 = new Object();
-        System.out.println("toString(): " + obj1.toString());
-
-        // equals() method
         Object obj2 = new Object();
-        Object obj3 = obj2;
-        System.out.println("equals(): " + obj2.equals(obj3));
 
-        // hashCode() method
-        System.out.println("hashCode(): " + obj1.hashCode());
+        // 1. equals(Object obj)
+        boolean isEqual = obj1.equals(obj2);
+        System.out.println("Are obj1 and obj2 equal? " + isEqual);
 
-        // getClass() method
-        System.out.println("getClass(): " + obj1.getClass().getName());
+        // 2. hashCode()
+        int hashCode1 = obj1.hashCode();
+        int hashCode2 = obj2.hashCode();
+        System.out.println("HashCode of obj1: " + hashCode1);
+        System.out.println("HashCode of obj2: " + hashCode2);
 
-        // clone() method
-        Object obj4 = obj1;
-        Object obj5 = obj1.clone();
-        System.out.println("clone(): " + (obj1 == obj4)); // true - same reference
-        System.out.println("clone(): " + (obj1 == obj5)); // false - different reference
+        // 3. toString()
+        String str = obj1.toString();
+        System.out.println("String representation of obj1: " + str);
 
-        // finalize() method (deprecated)
-        Object obj6 = new Object();
-        obj6 = null;
-        System.gc(); // Calls the garbage collector
+        // 4. getClass()
+        Class<? extends Object> classOfObj1 = obj1.getClass();
+        System.out.println("Class of obj1: " + classOfObj1);
 
-        // wait(), notify(), notifyAll() methods (used in a synchronized context)
-        final Object lock = new Object();
-        new Thread(() -> {
-            synchronized (lock) {
-                try {
-                    lock.wait(); // Thread waits until notify() or notifyAll() is called
-                    System.out.println("Thread awakened.");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-        Thread.sleep(1000); // Wait to ensure the other thread starts waiting
-        synchronized (lock) {
-            lock.notify(); // Wakes up one waiting thread
-            // lock.notifyAll(); // Wakes up all waiting threads
+        // 5. clone()
+        try {
+            Object clonedObj = obj1.clone();
+            System.out.println("Cloned obj1: " + clonedObj);
+        } catch (CloneNotSupportedException e) {
+            System.out.println("Cloning not supported for obj1.");
         }
 
-        // getClassLoader() method
-        ClassLoader classLoader = obj1.getClass().getClassLoader();
-        System.out.println("getClassLoader(): " + classLoader);
+        // 6. finalize()
+        // Since calling finalize() explicitly is deprecated and unreliable,
+        // this method is not recommended to be demonstrated here.
 
-        // wait(long timeout), wait(long timeout, int nanos) methods (used in a synchronized context)
-        synchronized (lock) {
-            lock.wait(1000); // Thread waits for 1 second or until notify() or notifyAll() is called
-            System.out.println("Thread awakened after waiting for 1 second.");
-        }
+        // 7. notify()
+
+        // 8. notifyAll()
+
+        // 9. wait()
+
+        // 10. wait(long timeout)
+
+        // 11. wait(long timeout, int nanos)
     }
 }
