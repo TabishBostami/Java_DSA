@@ -10,7 +10,8 @@ public class linearSearching {
         int target = 32;
 
         int[] ans = search(arr,target);
-        System.out.println(Arrays.toString(ans));
+        System.out.println("Index = "+Arrays.toString(ans));
+        System.out.println(arr[ans[0]][ans[1]]);
 
     }
     public static int[] search(int[][] arr, int target){
