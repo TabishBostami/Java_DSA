@@ -7,11 +7,11 @@ public class linearSearching {
                 {1,4,6},
                 {12,35,32}
         };
-        int target = 32;
+        int target = 33;
 
         int[] ans = search(arr,target);
         System.out.println("Index = "+Arrays.toString(ans));
-        System.out.println(arr[ans[0]][ans[1]]);
+//        System.out.println(arr[ans[0]][ans[1]]);
 
     }
     public static int[] search(int[][] arr, int target){
