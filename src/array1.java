@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class array1 {
@@ -9,17 +10,15 @@ public class array1 {
         int a = sc.nextInt();
 
         int[] arr= new int[a];
+        System.out.println(Arrays.toString(arr));
 
         for(int i=0;i<a;i++){
-            System.out.print("Enter Value of index "+ i + " : ");
+//            System.out.print("Enter Value of index "+ i + " : ");
             int an = sc.nextInt();
             arr[i] = an;
 
         }
-        for(int j : arr){
-            System.out.print(j +" ");
-        }
-
+        System.out.println(Arrays.toString(arr));
 
     }
 }

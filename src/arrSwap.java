@@ -6,6 +6,8 @@ public class arrSwap {
         int[] arr = {1,2,3,4,5};
 
         swap(arr,2,3);
+
+
         System.out.println(Arrays.toString(arr));
 
     }
