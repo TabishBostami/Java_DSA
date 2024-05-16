@@ -13,7 +13,7 @@ public class array1 {
         System.out.println(Arrays.toString(arr));
 
         for(int i=0;i<a;i++){
-//            System.out.print("Enter Value of index "+ i + " : ");
+            System.out.print("Enter Value of index "+ i + " : ");
             int an = sc.nextInt();
             arr[i] = an;
 
